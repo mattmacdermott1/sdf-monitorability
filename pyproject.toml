@@ -28,4 +28,5 @@ test = "pytest"
 all = [ {ref="fmt"}, {ref="lint"}, {ref="check"}, {ref="test"} ]
 
 [tool.pytest.ini_options]
-addopts = "--doctest-modules" 
+addopts = "--doctest-modules"
+pythonpath = ["."] 
