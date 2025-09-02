@@ -1,0 +1,3 @@
+[submodule "external/safety-tooling"]
+	path = external/safety-tooling
+	url = https://github.com/safety-research/safety-tooling.git

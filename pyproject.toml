@@ -13,10 +13,12 @@ dev = [
     "pytest>=8.4.1",
     "ruff>=0.12.11",
 ]
+
 [tool.pyright]
 venvPath = "."        
 venv = ".venv"         
 strict = ["**/*.py"]
+ignore = ["external"]
 
 [tool.poe.tasks]
 # run with eg `uv run poe fmt`
@@ -30,3 +32,7 @@ all = [ {ref="fmt"}, {ref="lint"}, {ref="check"}, {ref="test"} ]
 [tool.pytest.ini_options]
 addopts = "--doctest-modules"
 pythonpath = ["."] 
+testpaths = ["tests"]
+
+[tool.ruff]
+extend-exclude = ["external"]
