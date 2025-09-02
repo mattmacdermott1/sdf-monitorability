@@ -1,5 +1,5 @@
-# .github/workflows/pr.yml
-name: pr
+# .github/workflows/ci.yml
+name: CI
 on:
   pull_request:
     types: [opened, reopened, synchronize]
@@ -15,9 +15,9 @@ jobs:
           version: "0.5.14"
       - run: |                     # abort if the lockfile changes
           uv sync --all-extras --dev
-          [[ -n $(git diff --stat requirements.lock) ]] && exit 1
-      - run: uv run poe ci:fmt    
-      - run: uv run poe ci:lint    
+          [[ -n $(git diff --stat uv.lock) ]] && exit 1
+      - run: uv run poe fmt    
+      - run: uv run poe lint    
       - run: uv run poe check     
       - run: uv run poe test       
 
