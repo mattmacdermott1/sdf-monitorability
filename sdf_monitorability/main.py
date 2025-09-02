@@ -1,5 +1,5 @@
 def main():
-    print("Hello from sdf-monitorability!")
+    print("Hello from sdf-monitorability")
 
 
 if __name__ == "__main__":
