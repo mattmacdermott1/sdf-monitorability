@@ -4,7 +4,12 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "anthropic>=0.65.0",
+    "ipykernel>=6.30.1",
+    "jupyter>=1.1.1",
+    "openai>=1.104.2",
+]
 
 [dependency-groups]
 dev = [
@@ -18,7 +23,7 @@ dev = [
 venvPath = "."        
 venv = ".venv"         
 strict = ["**/*.py"]
-ignore = ["external"]
+ignore = ["external", "notebooks"]
 
 [tool.poe.tasks]
 # run with eg `uv run poe fmt`
@@ -35,4 +40,4 @@ pythonpath = ["."]
 testpaths = ["tests"]
 
 [tool.ruff]
-extend-exclude = ["external"]
+extend-exclude = ["external", "notebooks"]
